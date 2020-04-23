@@ -22,15 +22,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#fa8231',
     },
     buttonDouble: {
-        width: (Dimension.get('window').width / 4) * 2,
+        width: (Dimensions.get('window').width / 4) * 2,
     },
     buttonTriple: {
-        width: (Dimension.get('window').width / 4) * 3,
+        width: (Dimensions.get('window').width / 4) * 3,
     }
 })
 
 export default props => {
-    const stylesButton = [styles.button] //estilo inicial. Array com styles.button, entra no if para ver qual propriedade terá.
+    //estilo inicial. Array com styles.button, entra no if para ver qual propriedade terá.
+    const stylesButton = [styles.button] 
     if (props.double) stylesButton.push(styles.buttonDouble)
     if (props.triplo) stylesButton.push(styles.buttonTriple)
     if (props.operation) stylesButton.push(styles.operationButton)
