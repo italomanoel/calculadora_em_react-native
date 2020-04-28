@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-    StyleSheet,
-    Text,
-    Dimensions,
-    TouchableHighlight
-} from 'react-native';
+import { StyleSheet, Text, Dimensions, TouchableHighlight } from 'react-native';
 
 const styles = StyleSheet.create({
     button: {
@@ -31,13 +26,14 @@ const styles = StyleSheet.create({
 
 export default props => {
     //estilo inicial. Array com styles.button, entra no if para ver qual propriedade terá.
-    const stylesButton = [styles.button] 
+    const stylesButton = [styles.button]
     if (props.double) stylesButton.push(styles.buttonDouble)
-    if (props.triplo) stylesButton.push(styles.buttonTriple)
+    if (props.triple) stylesButton.push(styles.buttonTriple)
     if (props.operation) stylesButton.push(styles.operationButton)
     return (
-        <TouchableHighlight onPress = {props.onClick}>
-            <Text style = {stylesButton}>{props.label}</Text> 
+        <TouchableHighlight onPress={() => props.onClick(props.label)}>
+            <Text style={stylesButton}>{props.label}</Text>
         </TouchableHighlight>
     )
 }
+

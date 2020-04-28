@@ -5,7 +5,6 @@
  * @format
  * @flow strict-local 
 */
-
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import Button from './src/components/Button';
@@ -24,7 +23,7 @@ export default class App extends Component {
   state = { ...initialState } //operador spread do javascript. Criação de outro objeto (state) com os valores de initialState
 
   addDigit = number => {
-    console.debug(typeof this.state.addDigit); 
+    /* console.debug(typeof this.state.addDigit); */
     //impedindo que tenha mais de um ponto. Basicamente validações para bloquear operações como mais de um ponto.
     const clearDisplay = this.state.displayValue === '0' || this.state.clearDisplay
     if( number === '.' && !clearDisplay && this.state.displayValue.includes('.')) {
@@ -48,7 +47,7 @@ export default class App extends Component {
   }
 
   setOperation = operation => {
-    /*lembrar de usar 'react-native debug-android' no terminal
+    /*usar 'react-native debug-android' no terminal
     console.debug(typeof this.state.setOperation); */
     console.debug(typeof this.state.setOperation);
     if (this.state.current === 0) {
